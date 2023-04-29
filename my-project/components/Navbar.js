@@ -156,7 +156,7 @@ const Navbar = () => {
               <AiOutlineHome />
             </button>
           </Link>
-          <Link href={"/Explore"}>
+          <Link href={"/ExploreForHome"}>
             {" "}
             <button
               type="button"
