@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import { AiOutlineHeart } from "react-icons/Ai";
 import { BiChat } from "react-icons/Bi";
 import { BsArrowDownUp } from "react-icons/Bs";
-import Footer from "@/components/Footer";
+
 import PPD from "./ProfileDropDown";
 import Link from "next/link";
 
-const Explore = () => {
+const Right = () => {
   const Post = ({ displayName, userName, text, image, avatar, timestamp }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     return (
-      <div className=" container flex flex-row items-center justify-center ">
+      <>
+      
+      <div className="flex flex-row container items-center justify-center bg-white ">
         <div className="post flex flex-row border-2 shadow-xl p-8">
           <div className="flex flex-col ">
             <div className="">
@@ -49,7 +51,7 @@ const Explore = () => {
                 <p>{text}</p>
               </div>
             </div>
-            <img src={image} alt="" className="p-10 h-auto w-auto " />
+            <img src={image} alt="" className="p-10 h-80 w-96 " />
             <div className="post__footer flex flex-row space-x-6">
               <BiChat />
               <AiOutlineHeart className="outline-red-400" />
@@ -58,6 +60,7 @@ const Explore = () => {
           </div>
         </div>
       </div>
+      </>
     );
   };
 
@@ -114,12 +117,10 @@ const Explore = () => {
             timestamp="13h"
           />
         </div>
-        <div className="sr-only sm:not-sr-only ">
-          <Footer />
-        </div>
+        
       </div>
     </>
   );
 };
 
-export default Explore;
+export default Right;

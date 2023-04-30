@@ -178,7 +178,7 @@ const Navbar = () => {
         </div>
         <div className="button absolute right-4 top-4">
           <button className="bg-purple-500 hover:bg-purple-600 border-purple-600 focus:ring-purple-400 border text-white px-3 py-1 inline-flex items-center space-x-1.5 rounded-lg font-bold shadow-sm outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-1 disabled:opacity-50">
-            <Image width={16} height={16} src="./logo.svg" alt="logo"></Image>{" "}
+            <Image className="" width={16} height={16} src="./LoginImage.svg" alt="logo"></Image>{" "}
             <div>Login</div>
           </button>
         </div>
