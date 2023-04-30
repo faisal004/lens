@@ -11,7 +11,7 @@ const PPD = () => {
   }) => {
     return (
       <div className="flex flex-row items-center justify-center h-96 w-64 bg-white">
-        <div className="post flex flex-col border-2 shadow-xl p-4 my-1 rounded-lg h-full w-full">
+        <div className="post flex flex-col  p-4 my-1 rounded-lg h-full w-full">
           <div className="post__avatarppd p-2 border-double border-red-500">
             <img
               className="w-52 h-52 -mt-36  rounded-lg cursor-pointer ring-8 ring-purple-400"
