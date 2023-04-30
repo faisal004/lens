@@ -13,7 +13,7 @@ const Explore = () => {
         <div className="post flex flex-row border-2 shadow-xl p-8">
           <div className="post__avatar p-6">
             <img
-              className="w-28 h-10 rounded-full"
+              className="w-40 h-10 rounded-full cursor-pointer"
               src={avatar}
               alt="Rounded avatar"
             />
@@ -32,7 +32,7 @@ const Explore = () => {
                 <p>{text}</p>
               </div>
             </div>
-            <img  src={image} alt="" className="p-10 h-auto w-auto" />
+            <img  src={image} alt="" className="p-10 h-80 w-96 " />
             <div className="post__footer flex flex-row space-x-6">
             <BiChat/>
             <AiOutlineHeart className="outline-red-400"/>
@@ -45,7 +45,7 @@ const Explore = () => {
   };
   return (
     <>
-    <div className="flex flex-row">
+    <div className="flex flex-row container mx-auto max-w-screen-xl px-5">
     <div >
     
     <Post

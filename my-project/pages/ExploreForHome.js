@@ -5,7 +5,7 @@ import Button from './Button'
 
 const ExploreForHome = () => {
   return (
-    <div><Tablist/>
+    <div className='container mx-auto max-w-screen-xl px-5'><Tablist/>
     <Button className="px-9"/>
     <Explore/></div>
   )

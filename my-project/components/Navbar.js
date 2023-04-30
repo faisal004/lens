@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -8,12 +8,13 @@ import {
   AiOutlineHome,
 } from "react-icons/Ai";
 import { useRef } from "react";
-import {GiCancel} from "react-icons/Gi"
+import { GiCancel } from "react-icons/Gi";
 
 import { GrMailOption } from "react-icons/Gr";
 
 const Navbar = () => {
   const [seachOpen, setSeachOpen] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
   const toggleSearch = () => {
     if (ref.current.classList.contains("-translate-y-36")) {
       ref.current.classList.remove("-translate-y-36");
@@ -24,17 +25,19 @@ const Navbar = () => {
 
       ref.current.classList.add("-translate-y-36");
       setSeachOpen(false);
-      
     }
-    
   };
 
   const ref = useRef();
   return (
-    <div className=" sticky top-0 bg-white">
-      <div className="p-4 flex  flex-col md:flex-row md:justify-start justify-center items-center space-x-4">
+    <div className=" sticky top-0 bg-white container mx-auto max-w-screen-xl px-5">
+      <div className="p-4 flex flex-col md:flex-row md:justify-start justify-center items-center space-x-4 ">
         <button className="absolute left-3 top-4 text-3xl md:invisible sm:visible">
-         {!seachOpen?(<AiOutlineSearch onClick={toggleSearch} />):(<GiCancel onClick={toggleSearch}/>)} 
+          {!seachOpen ? (
+            <AiOutlineSearch onClick={toggleSearch} />
+          ) : (
+            <GiCancel onClick={toggleSearch} />
+          )}
           <div
             ref={ref}
             className="search for mobile space-x-10 w-screen p-4  transform transition-transform -translate-y-36"
@@ -130,11 +133,47 @@ const Navbar = () => {
                 Explore
               </li>
             </Link>
-            <Link href={"/"}>
-              <li className="w-full cursor-pointer rounded-md px-2 py-1 text-left text-sm font-bold tracking-wide md:px-3 text-gray-700 hover:bg-gray-200 hover:text-black ">
-                More
-              </li>
-            </Link>
+
+            <li
+              onClick={() => {
+                setDropdown(!dropdown);
+              }}
+              className="w-full cursor-pointer rounded-md px-2 py-1 text-left text-sm font-bold tracking-wide md:px-3 text-gray-700 hover:bg-gray-200 hover:text-black "
+            >
+              More
+            </li>
+
+            {dropdown && (
+              <div
+                onClick={() => {
+                  setDropdown(!dropdown);
+                }}
+                className="dropdown absolute left-[30rem] top-14 shadow-xl "
+              >
+                <div
+                  id="dropdown"
+                  className="z-10  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 "
+                >
+                  <ul className="py-2 font-semibold text-sm text-gray-700 ">
+                    <Link
+                      className="block px-4 py-2 hover:bg-gray-100"
+                      href={"/contact"}
+                    >
+                      <li>Contacts</li>
+                    </Link>
+                    <Link
+                      className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                      href={
+                        "https://github.com/lensterxyz/lenster/issues/new?assignees=bigint&labels=needs+review&template=bug_report.yml"
+                      }
+                    >
+                      {" "}
+                      <li>Report a Bug</li>
+                    </Link>
+                  </ul>
+                </div>
+              </div>
+            )}
           </ul>
         </div>
         <div className="button absolute right-4 top-4">
@@ -145,7 +184,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="sm:visible md:invisible fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 ">
+      <div className="sm:visible md:invisible fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200  ">
         <div className="grid h-full max-w-lg grid-cols-4 mx-auto font-medium py-3">
           <Link href={"/"}>
             {" "}

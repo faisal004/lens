@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="first line sticky top-12 ">
+    <div className="first line sticky top-12 container mx-auto max-w-screen-xl px-5 ">
       <div className="first space-x-4  p-5 break-words">
         <span className="font-semibold font-mono">© 2023 Lenster </span>
        
